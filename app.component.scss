@@ -1,0 +1,229 @@
+/* Style for the filter input */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ html,body{
+  width: 100% !important;
+ }
+.mat-form-field {
+    margin-bottom: 16px; 
+  }
+  
+  
+.filter-container {
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 16px; 
+  margin-left: 5px;
+}
+.filter-input {
+  flex: 1;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important;
+  // margin-left: 5px;
+}
+
+.filter-input > input {
+  border: 1px solid rgb(111, 109, 109);
+  width: 63px;
+  margin-top: 5px;
+  padding: 5px;
+  // margin-left: 5px;
+}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+  }
+
+  .table-container{
+    width: auto;
+    max-height: 800px; 
+      overflow-x: auto; 
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    margin: 0 auto; /* Center the table horizontally */
+    padding: 0 10px;
+    margin-right: 10px;
+  }
+
+  
+
+.mat-table {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto; /* Center the table horizontally */
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+  .pagination-container {
+     margin-top: 10px;
+    align-self: flex-end;
+  }
+  
+  th, td {
+    padding: 8px;
+    // text-align: left;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  th {
+    background-color: #f2f2f2; 
+    font-weight: bold;
+  }
+  tr {
+    border-bottom: 1px solid #ddd;
+    
+  }
+  th,td {
+    border-right: 1px solid #ddd; 
+    padding: 4px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+  table > tr > th{
+    width : 10%;
+    padding: 0px 10px;
+  }
+
+  table > tr > td{
+    width : 10%;
+   
+  }
+
+  table>tbody>tr>td{
+    padding: 0px 10px;
+  }
+
+  .numeric-cell {
+    text-align: right !important; 
+    align-items: right;
+    justify-content: right;
+  }
+  
+
+  .mat-paginator {
+    justify-content: center; 
+    margin-top: 16px; 
+  }
+  
+  
+  .mat-paginator-page-size, .mat-paginator-range-label {
+    font-size: 14px;
+  }
+  
+  
+  .mat-select-value {
+    font-size: 14px;
+  }
+  
+  
+  .mat-option.mat-selected {
+    background-color: #2196F3; 
+    color: #fff; 
+  }
+
+
+  .table-container {
+    width: 100%; }
+
+
+.table-scroll {
+ 
+  width: 100%;
+}
+
+
+
+.mat-paginator-page-size, .mat-paginator-range-label {
+  font-size: 14px;
+}
+
+
+.mat-select-value {
+  font-size: 14px;
+}
+
+table.show-all-columns th,
+table.show-all-columns td {
+  white-space: normal; 
+}
+
+td:nth-child(17) { text-align: right !important; }
+
+table>tr>th:last-child{
+  text-align: right;
+}
+
+.export-buttons{
+  margin-left: 80%;
+}
+
+th.mat-header-cell{
+  height: 5vh !important;
+}
+
+tr.mat-header-row {
+  height: 45px !important;
+}
+tr.mat-row{
+  height: 40px !important;
+}
+.export-buttons button{
+  background-color: rgb(85, 85, 253);
+  color: #fff;
+  padding: 5px;
+  border: 1px solid  rgb(85, 85, 253);
+  margin: 10px;
+  justify-content: end;
+  text-align: end;
+}
+
+td.mat-cell:last-of-type{
+  padding-right: 0 !important;
+}
+
+td.mat-cell{
+  padding: 10px 10px;
+}
+
+
+th.mat-header-cell {
+  padding: 0px 6px;
+  font-size: 12px;
+  height: 10px !important; /* Adjust the height as needed */
+}
+
+/* Adjust the padding for header cells with long text */
+th.mat-header-cell.mat-sort-header {
+  padding-right: 8px; /* Increase or decrease as needed */
+}
+
+.pagination-container{
+  margin-left: 70%;
+}
+.prev-btn{
+  color: gray !important;
+}
+
+.pagination-container .pag-btn{
+  border: none !important;
+  font-size: 20px;
+  color: rgb(90, 89, 89);
+}
+
+
+.editrow{
+  padding: 2%;
+}
+
+form > mat-form-field{
+  margin: 1%;
+  padding: 1%;
+}
