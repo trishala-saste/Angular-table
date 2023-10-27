@@ -1,0 +1,288 @@
+<div class="export-buttons">
+  <button (click)="showAllColumns()">Show All Columns</button>
+  <button (click)="exportToCsv()">CSV</button>
+  <button (click)="exportToExcel()">Excel</button>
+  
+  <!-- <button (click)="exportToPdf()">Export as PDF</button> -->
+</div>
+
+
+<div class="filter-container ">
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="nameFilter" (keyup)="applyFilter()" placeholder="Filter Name">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="ageFilter" (keyup)="applyFilter()" placeholder="Filter Age">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="cityFilter" (keyup)="applyFilter()" placeholder="Filter City">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="occupationFilter" (keyup)="applyFilter()" placeholder="Filter occupation">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="emailFilter" (keyup)="applyFilter()" placeholder="Filter email">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="phoneFilter" (keyup)="applyFilter()" placeholder="Filter phone">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="educationFilter" (keyup)="applyFilter()" placeholder="Filter education">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="hobbiesFilter" (keyup)="applyFilter()" placeholder="Filter hobbies">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="favoriteColorFilter" (keyup)="applyFilter()"
+      placeholder="Filter favoriteColor">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="maritalStatusFilter" (keyup)="applyFilter()"
+      placeholder="Filter maritalStatus">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="nationalityFilter" (keyup)="applyFilter()"
+      placeholder="Filter nationality">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="addressFilter" (keyup)="applyFilter()" placeholder="Filter address">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="employeeidFilter" (keyup)="applyFilter()" placeholder="Filter employeeid">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="departmentFilter" (keyup)="applyFilter()" placeholder="Filter department">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="genderFilter" (keyup)="applyFilter()" placeholder="Filter gender">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="pincodeFilter" (keyup)="applyFilter()" placeholder="Filter pincode">
+  </div>
+  <div class="filter-input">
+    <input matInput type="text" [(ngModel)]="salaryFilter" (keyup)="applyFilter()" placeholder="Filter salary">
+  </div>
+</div>
+
+<div class="table-container">
+  
+<table mat-table  [dataSource]="pageData" matSort class="mat-elevation-z8" [class.show-all-columns]="showAllColumnsFlag">
+
+  
+  <ng-container matColumnDef="name" sticky>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">Name</th>
+    <td mat-cell *matCellDef="let item">
+      
+      <a [routerLink]="['/details', item.employeeid]">{{ item.name }}</a>
+    </td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">id</th>
+    <td mat-cell *matCellDef="let item" class="numeric-cell">{{ item.id }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by age">Age</th>
+    <td mat-cell *matCellDef="let item" class="numeric-cell">{{ item.age }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by city">City</th>
+    <td mat-cell *matCellDef="let item">{{ item.city }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="occupation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by occupation">occupation</th>
+    <td mat-cell *matCellDef="let item">{{ item.occupation }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">email</th>
+    <td mat-cell *matCellDef="let item">{{ item.email }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by phone">phone</th>
+    <td mat-cell *matCellDef="let item" class="numeric-cell">{{ item.phone }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="education">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by education">education</th>
+    <td mat-cell *matCellDef="let item">{{ item.education }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+
+  <ng-container matColumnDef="hobbies">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by hobbies">hobbies</th>
+    <td mat-cell *matCellDef="let item">{{ item.hobbies }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+
+  <ng-container matColumnDef="favoriteColor">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by favoriteColor">favorite Color
+    </th>
+    <td mat-cell *matCellDef="let item">{{ item.favoriteColor }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="maritalStatus">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by maritalStatus">marital Status
+    </th>
+    <td mat-cell *matCellDef="let item">{{ item.maritalStatus }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="nationality">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nationality">nationality</th>
+    <td mat-cell *matCellDef="let item">{{ item.nationality }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by address">address</th>
+    <td mat-cell *matCellDef="let item">{{ item.address }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="employeeid">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by employeeid">employeeid</th>
+    <td mat-cell *matCellDef="let item" class="numeric-cell">{{ item.employeeid }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="department">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by department">department</th>
+    <td mat-cell *matCellDef="let item">{{ item.department }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gender">gender</th>
+    <td mat-cell *matCellDef="let item">{{ item.gender }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="pincode">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by pincode">pincode</th>
+    <td mat-cell *matCellDef="let item" >{{ item.pincode }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  <ng-container matColumnDef="salary">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by salary" >Salary</th>
+    <td mat-cell *matCellDef="let item" class="numeric-cell">{{ item.salary | indianNumberFormat }}</td>
+    <mat-divider vertical="true"></mat-divider>
+  </ng-container>
+
+  
+  <!-- <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="editRow(element)">Edit</button>
+    </td>
+  </ng-container> -->
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="editRow(element)">Edit</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr> 
+   
+</table>
+
+<div class="pagination-container" >
+  <button mat-button (click)="previousPage()" [disabled]="pageIndex === 0" class="pag-btn prev-btn"><</button>
+  <span>Page {{ pageIndex + 1 }}</span>
+  <button mat-button (click)="nextPage()" [disabled]="pageIndex + 1 >= totalPages()" class="pag-btn">></button>
+  <span c
+  lass="page-count">{{ calculateItemCount() }}</span>
+</div>
+
+
+<!-- <button (click)="showAllColumns()">Show All Columns</button> -->
+</div>
+
+
+
+<!-- <app-col-search></app-col-search> -->
+
+ <div *ngIf="editingRow" class="editrow">
+  <h2>Edit Row</h2>
+  <form  (submit)="saveEdit()">
+    
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="editingRow.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="id" [(ngModel)]="editingRow.id" name="id">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Age" [(ngModel)]="editingRow.age" name="age">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="city" [(ngModel)]="editingRow.city" name="city">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="occupation" [(ngModel)]="editingRow.occupation" name="occupation">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="email" [(ngModel)]="editingRow.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="phone" [(ngModel)]="editingRow.phone" name="phone">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="education" [(ngModel)]="editingRow.education" name="education">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="hobbies" [(ngModel)]="editingRow.hobbies" name="hobbies">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="favoriteColor" [(ngModel)]="editingRow.favoriteColor" name="favoriteColor">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="maritalStatus" [(ngModel)]="editingRow.maritalStatus" name="maritalStatus">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="nationality" [(ngModel)]="editingRow.nationality" name="nationality">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="address" [(ngModel)]="editingRow.address" name="address">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="employeeid" [(ngModel)]="editingRow.employeeid" name="employeeid">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="department" [(ngModel)]="editingRow.department" name="department">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="gender" [(ngModel)]="editingRow.gender" name="gender">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="pincode" [(ngModel)]="editingRow.pincode" name="pincode">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="salary" [(ngModel)]="editingRow.salary" name="salary">
+    </mat-form-field>
+    <button mat-raised-button type="submit">Save</button>
+    <button mat-raised-button (click)="cancelEdit()">Cancel</button>
+  </form>
+</div> 
